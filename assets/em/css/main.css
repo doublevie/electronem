@@ -1,0 +1,26 @@
+.topMain {height:80px;background: #424242;color:#fff;z-index: 100}
+.topMain.fixed {position: fixed;top: 0;left:0;right:0;height:80px}
+/*.topMain.fixed.full {height:100vh;}
+.topMain.fixed.full , .topMain.fixed {
+  transition: all 0.8 ease;
+  -webkit-transition: all 0.8 ease;
+}*/
+
+
+
+
+
+
+
+.loginBox {position: fixed;
+  top:calc(50vh - 100px);left:calc(50vw - 200px);width:400px;height:200px;
+border: 1px solid #424242;
+padding: 55px 15px 15px 15px;
+background: #FAFAFA;
+}
+
+.loginBox .title {position: absolute;top:0;left:0;right:0;height:45px;line-height: 45px;background:#424242;color:#fff;
+font-size: 18px;
+padding-left: 15px;
+ }
+.loginBox .form-control  {margin-bottom: 8px}

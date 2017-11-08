@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TTT</title>
+    <link rel="stylesheet" href="assets/bs4/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+
+<h1>HELLO FARES</h1>
+<table id="res" class="table table-bordered">
+
+</table>
+
+</div>
+
+
+<script type="text/javascript">
+var mysql = require('mysql');
+
+// Add the credentials to access your database
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : null, // or the original password : 'apaswword'
+  database : 'test'
+});
+
+$query = 'SELECT * FROM `contacts` LIMIT 10';
+connection.query($query, function(err, rows, fields) {
+    if(err){
+        console.log("An error ocurred performing the query.");
+        console.log(err);
+        return;
+    }
+
+    console.log("Query succesfully executed", rows[0]);
+    let hh = '';
+if (rows && rows.length) {
+for (var i = 0; i < rows.length; i++) {
+hh += '<tr><td>'+ rows[i].id + '</td><td>'+ rows[i].name +'</td></tr>';
+}
+document.getElementById('res').innerHTML = hh;
+}
+
+
+
+
+});
+
+// Close the connection
+connection.end(function(){
+    // The connection has been closed
+});
+</script>
+  </body>
+</html>
