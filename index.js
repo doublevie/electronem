@@ -25,3 +25,5 @@ app.on('ready', function() {
     mainWindow = null;
   });
 });
+
+var menu = '<h1>sdsdsdsd<br>jkdskjsd</h1>';

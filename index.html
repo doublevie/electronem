@@ -10,7 +10,7 @@
 
 
 <div class="topMain  fixed full">
-
+<img src="assets/em/light.png" class="logo" alt="">
 </div>
 
 <div class="loginBox">
@@ -37,23 +37,30 @@ Connexion
 
 document.getElementById('login').addEventListener('submit',function(e){
   e.preventDefault();
-  let user , pass;
+  let user , pass ,wrongPass = true;
   user = document.querySelector('[name="user"]').value ;
   pass = document.querySelector('[name="password"]').value ;
   console.log(user + '-'+pass );
   console.log(usersList);
   if (usersList && usersList.length) {
 for (var i = 0; i < usersList.length; i++) {
-  if(usersList[i][0] == user && usersList[i][2] == pass ) alert('welcome');
-}
-  } else {
-    console.log('null');
+  if(usersList[i][0] == user && usersList[i][2] == pass ) {
+  localStorage.Cuser = usersList[i][1];
+  localStorage.CuserID = usersList[i][0];
+  window.location.href = 'dashboard.html';
+wrongPass = false;
   }
+}
+if (wrongPass) alert('pssword incorrect');
+  }
+
+
   return false;
 });
 
 window.onload = function(){
-document.querySelector('.topMain').classList.remove('full');
+  window.setTimeout(function(){document.querySelector('.topMain').classList.remove('full');},1000)
+
 }
 
 

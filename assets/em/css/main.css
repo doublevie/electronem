@@ -1,16 +1,28 @@
+nav {z-index: 110}
 .topMain {height:80px;background: #424242;color:#fff;z-index: 100}
 .topMain.fixed {position: fixed;top: 0;left:0;right:0;height:80px}
-/*.topMain.fixed.full {height:100vh;}
+.topMain.fixed.full {height:100vh;}
+
+
+
+.topMain.fixed .logo {
+  height: 0;
+}
+
+.topMain.fixed.full .logo {
+  position: fixed;
+  left:calc(50vw - 300px);top:calc(50vh - 80px);
+  width: 600px;height:160px;
+}
+
+
 .topMain.fixed.full , .topMain.fixed {
-  transition: all 0.8 ease;
-  -webkit-transition: all 0.8 ease;
-}*/
-
-
-
-
-
-
+  -webkit-transition: all 0.9s ease-in-out;
+    -moz-transition: all 0.9s ease-in-out;
+    -ms-transition: all 0.9s ease-in-out;
+    -o-transition: all 0.9s ease-in-out;
+    transition: all 0.9s ease-in-out;
+}
 
 .loginBox {position: fixed;
   top:calc(50vh - 100px);left:calc(50vw - 200px);width:400px;height:200px;
